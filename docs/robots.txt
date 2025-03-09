@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://jms0923.github.io/ad_bench/sitemap.xml 
+Sitemap: https://jms0923.github.io/auto-driving-benchmark/sitemap.xml 
