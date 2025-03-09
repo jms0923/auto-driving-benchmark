@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자율주행 벤치마크 플랫폼</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">자율주행 벤치마크</a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">AI 모델 평가</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="modelEvalForm">
+                            <div class="mb-3">
+                                <label for="modelType" class="form-label">모델 유형</label>
+                                <select class="form-select" id="modelType" name="modelType">
+                                    <option value="detection">객체 검출</option>
+                                    <option value="segmentation">세그멘테이션</option>
+                                    <option value="depth">깊이 추정</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="modelOutput" class="form-label">모델 출력 데이터</label>
+                                <input type="file" class="form-control" id="modelOutput" accept=".json">
+                            </div>
+                            <div class="mb-3">
+                                <label for="modelGroundTruth" class="form-label">정답 데이터</label>
+                                <input type="file" class="form-control" id="modelGroundTruth" accept=".json">
+                            </div>
+                            <button type="submit" class="btn btn-primary">평가하기</button>
+                        </form>
+                        <div id="modelResults" class="mt-3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">후처리 평가</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="postprocessEvalForm">
+                            <div class="mb-3">
+                                <label for="processType" class="form-label">후처리 유형</label>
+                                <select class="form-select" id="processType" name="processType">
+                                    <option value="tracking">객체 추적</option>
+                                    <option value="filtering">필터링</option>
+                                    <option value="fusion">센서 융합</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="processOutput" class="form-label">후처리 결과 데이터</label>
+                                <input type="file" class="form-control" id="processOutput" accept=".json">
+                            </div>
+                            <div class="mb-3">
+                                <label for="processGroundTruth" class="form-label">정답 데이터</label>
+                                <input type="file" class="form-control" id="processGroundTruth" accept=".json">
+                            </div>
+                            <button type="submit" class="btn btn-primary">평가하기</button>
+                        </form>
+                        <div id="processResults" class="mt-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 

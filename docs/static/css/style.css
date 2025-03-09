@@ -1,0 +1,93 @@
+/* 전역 스타일 */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* 카드 스타일 */
+.card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+}
+
+/* 폼 스타일 */
+textarea.form-control {
+    font-family: monospace;
+}
+
+/* 결과 표시 영역 */
+#evaluationResults {
+    font-family: monospace;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+/* 리더보드 스타일 */
+.table th {
+    border-top: none;
+    background-color: #f8f9fa;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.btn-group .btn {
+    padding: 0.25rem 0.75rem;
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+}
+
+/* 검색 영역 */
+.input-group {
+    width: auto;
+    min-width: 300px;
+}
+
+/* 반응형 조정 */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .input-group {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .table-responsive {
+        margin: 0 -15px;
+    }
+}
+
+.metric-header {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.metric-header:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.sort-arrow {
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 0.8em;
+}
+
+.metric-header.active {
+    background-color: rgba(0, 0, 0, 0.1);
+} 

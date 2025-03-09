@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %}통합 리더보드 - AI 모델 평가 도구{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <!-- 탭 메뉴 -->
+        <ul class="nav nav-tabs mb-4" id="leaderboardTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="model-tab" data-bs-toggle="tab" data-bs-target="#model" type="button" role="tab">
+                    AI 모델 리더보드
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="postprocess-tab" data-bs-toggle="tab" data-bs-target="#postprocess" type="button" role="tab">
+                    후처리 알고리즘 리더보드
+                </button>
+            </li>
+        </ul>
+
+        <!-- 탭 컨텐츠 -->
+        <div class="tab-content" id="leaderboardTabContent">
+            <!-- AI 모델 리더보드 -->
+            <div class="tab-pane fade show active" id="model" role="tabpanel">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h5 class="card-title mb-0">모델 순위</h5>
+                            </div>
+                            <div class="col-auto">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="modelSearchInput" placeholder="모델 검색...">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">정렬</button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#" data-sort="map" data-board="model">mAP 순</a></li>
+                                        <li><a class="dropdown-item" href="#" data-sort="fps" data-board="model">FPS 순</a></li>
+                                        <li><a class="dropdown-item" href="#" data-sort="date" data-board="model">최신순</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>순위</th>
+                                        <th>모델</th>
+                                        <th>mAP (%)</th>
+                                        <th>FPS</th>
+                                        <th>입력 크기</th>
+                                        <th>발표일</th>
+                                        <th>논문/코드</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="modelLeaderboardBody">
+                                    <!-- JavaScript로 동적 생성됨 -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 후처리 알고리즘 리더보드 -->
+            <div class="tab-pane fade" id="postprocess" role="tabpanel">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h5 class="card-title mb-0">알고리즘 순위</h5>
+                            </div>
+                            <div class="col-auto">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="postprocessSearchInput" placeholder="알고리즘 검색...">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">정렬</button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#" data-sort="accuracy" data-board="postprocess">정확도 순</a></li>
+                                        <li><a class="dropdown-item" href="#" data-sort="speed" data-board="postprocess">속도 순</a></li>
+                                        <li><a class="dropdown-item" href="#" data-sort="date" data-board="postprocess">최신순</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>순위</th>
+                                        <th>알고리즘</th>
+                                        <th>정확도 (%)</th>
+                                        <th>처리 속도 (ms)</th>
+                                        <th>메모리 사용량 (MB)</th>
+                                        <th>발표일</th>
+                                        <th>논문/코드</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="postprocessLeaderboardBody">
+                                    <!-- JavaScript로 동적 생성됨 -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/leaderboard.js') }}"></script>
+{% endblock %} 

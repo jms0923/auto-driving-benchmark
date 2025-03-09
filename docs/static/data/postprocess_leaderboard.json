@@ -1,0 +1,84 @@
+{
+    "algorithms": [
+        {
+            "name": "Soft-NMS Gaussian",
+            "accuracy": 95.8,
+            "speed": 1.8,
+            "memory": 96.0,
+            "date": "2017-03-15",
+            "paper_url": "https://arxiv.org/abs/1704.04503",
+            "code_url": "https://github.com/bharatsingh430/soft-nms",
+            "abstract": "Soft-NMS introduces a softer version of NMS that decays the scores of overlapping boxes instead of removing them. This approach maintains high recall while improving precision. The Gaussian version applies a continuous score decay function based on the IoU, leading to better overall detection performance.",
+            "image_url": "/static/images/soft-nms.png"
+        },
+        {
+            "name": "DIoU-NMS",
+            "accuracy": 95.5,
+            "speed": 2.1,
+            "memory": 102.0,
+            "date": "2020-01-15",
+            "paper_url": "https://arxiv.org/abs/1911.08287",
+            "code_url": "https://github.com/Zzh-tju/DIoU-NMS-pytorch",
+            "abstract": "DIoU-NMS improves the traditional NMS by considering both the overlap area and the normalized distance between box centers. This approach better handles cases where objects are heavily overlapped or nested. The method achieves better performance in crowded scenes while maintaining computational efficiency.",
+            "image_url": "/static/images/diou-nms.png"
+        },
+        {
+            "name": "Weighted-NMS",
+            "accuracy": 95.2,
+            "speed": 1.9,
+            "memory": 98.0,
+            "date": "2019-08-20",
+            "paper_url": "https://arxiv.org/abs/1908.02899",
+            "code_url": "https://github.com/example/weighted-nms",
+            "abstract": "Weighted-NMS assigns different weights to bounding boxes based on their confidence scores and spatial relationships. This weighted approach helps in better handling of overlapping objects and reduces false suppressions. The algorithm shows improved performance in complex scenes with multiple overlapping objects.",
+            "image_url": "/static/images/weighted-nms.png"
+        },
+        {
+            "name": "Softer-NMS",
+            "accuracy": 94.9,
+            "speed": 2.0,
+            "memory": 97.0,
+            "date": "2018-09-10",
+            "paper_url": "https://arxiv.org/abs/1809.08545",
+            "code_url": "https://github.com/yandex/softer-nms",
+            "abstract": "Softer-NMS extends the Soft-NMS algorithm by introducing a learnable parameter for score decay. This adaptive approach allows the algorithm to automatically adjust the suppression strength based on the context. The method shows consistent improvements across different object detection benchmarks.",
+            "image_url": "/static/images/softer-nms.png"
+        },
+        {
+            "name": "GIoU-NMS",
+            "accuracy": 94.7,
+            "speed": 2.2,
+            "memory": 104.0,
+            "date": "2019-03-25",
+            "paper_url": "https://arxiv.org/abs/1902.09630",
+            "code_url": "https://github.com/generalized-iou/g-darknet"
+        },
+        {
+            "name": "NMS Ensemble",
+            "accuracy": 94.5,
+            "speed": 3.1,
+            "memory": 156.0,
+            "date": "2021-05-12",
+            "paper_url": "https://example.com/nms-ensemble",
+            "code_url": "https://github.com/example/nms-ensemble"
+        },
+        {
+            "name": "Fast-NMS",
+            "accuracy": 93.8,
+            "speed": 1.2,
+            "memory": 82.0,
+            "date": "2019-11-30",
+            "paper_url": "https://arxiv.org/abs/1911.12150",
+            "code_url": "https://github.com/example/fast-nms"
+        },
+        {
+            "name": "Traditional NMS",
+            "accuracy": 93.5,
+            "speed": 1.5,
+            "memory": 64.0,
+            "date": "2015-06-01",
+            "paper_url": "https://arxiv.org/abs/1506.04878",
+            "code_url": "https://github.com/example/traditional-nms"
+        }
+    ]
+} 
